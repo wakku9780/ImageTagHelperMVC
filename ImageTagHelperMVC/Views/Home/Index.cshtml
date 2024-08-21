@@ -1,0 +1,35 @@
+﻿@model ImageTagHelperMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="d-grid" asp-action="Index" asp-controller="Home" method="post">
+                <input asp-for="Name" placeholder="Enter Name" class="form-control" />
+               <br/>
+               <select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                   <option value="">Select Gender  </option>
+               </select>
+                <input asp-for="Position" placeholder="Enter Position" class="form-control" />
+                <input asp-for="Department" placeholder="Enter Department" class="form-control" />
+                <input asp-for="Email" placeholder="Enter Email" class="form-control" />
+                <input asp-for="Phone" placeholder="Enter Phone Number" class="form-control" />
+                <input asp-for="DateOfBirth" placeholder="Enter Date of Birth" class="form-control" type="date" />
+                <input asp-for="DateOfJoining" placeholder="Enter Date of Joining" class="form-control" type="date" />
+                <input asp-for="Salary" placeholder="Enter Salary" class="form-control" type="number" step="0.01" />
+                <input asp-for="Address" placeholder="Enter Address" class="form-control" />
+
+                <!-- Add a submit button to complete the form -->
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
